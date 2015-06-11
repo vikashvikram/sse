@@ -1,6 +1,10 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h1>Messages</h1>
 <div id="messages">
   <ul id="message-list">
+  	<% @messages.each do |m| %>
+  	<li id="message-<%=m.id%>"><%=m.body%></li>
+  	<%end%>
   </ul>
+  <span data-no-turbolink><%= link_to "Messages", messages_path %></span>
 </div>
+
